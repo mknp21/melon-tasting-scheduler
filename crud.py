@@ -38,5 +38,5 @@ def get_all_reservations_by_email(email):
     return Reservation.query.filter(Reservation.user == user).all()
 
 if __name__ == '__main__':
-    # from server import app
+    from server import app
     connect_to_db(app)
