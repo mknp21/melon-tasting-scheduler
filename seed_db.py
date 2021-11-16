@@ -15,8 +15,9 @@ os.system('createdb rezzies')
 model.connect_to_db(server.app)
 model.db.create_all()
 
+#creates fake users
 for n in range(5):
     name = fake.name()
-    # email = 
+    email = f"user{n}@email.com"
 
-    # user = crud.create_user(name, email)
+    user = crud.create_user(name, email)

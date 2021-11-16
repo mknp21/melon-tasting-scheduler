@@ -7,7 +7,7 @@ from jinja2 import StrictUndefined
 # from random import choice
 
 import crud
-import requests
+# import requests
 import json
 
 app = Flask(__name__)
