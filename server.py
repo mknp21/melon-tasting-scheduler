@@ -14,6 +14,11 @@ app = Flask(__name__)
 app.secret_key = "dev"
 app.jinja_env.undefined = StrictUndefined
 
+@app.route("/")
+def show_home():
+    """Show homepage."""
+
+    return render_template("home.html")
 
 if __name__ == "__main__":
     # DebugToolbarExtension(app)
