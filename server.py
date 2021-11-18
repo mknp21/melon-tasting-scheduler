@@ -31,15 +31,24 @@ def process_login():
         flash("No account found.")
         return redirect("/")
     else:
-        session["current_user"] = user.name
+        session["current_user"] = user.user_id
         flash("Login successful!")
         return redirect("/browse-reservations")
 
 @app.route("/browse-reservations")
-def show_res():
+def show_all_res():
     """Show available reservations."""
 
     return render_template("search.html")
+
+@app.route("/reservations")
+def show_user_res():
+    """Show user's reservations."""
+
+    user_id = session["current_user"]
+    user = 
+
+    return render_template("user_reservs.html", user=user)
 
 
 if __name__ == "__main__":
