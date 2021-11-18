@@ -2,6 +2,7 @@
 
 
 from model import db, User, Reservation, connect_to_db
+from datetime import date, time, datetime
 
 
 def create_user(name, email):
@@ -14,10 +15,14 @@ def create_user(name, email):
     return user
 
 
-def create_reservation(user, details):
+def create_reservation(user, date, start_time, end_time):
     """Create a reservation."""
 
-    reservation = Reservation(user=user, details=details)
+    date = date(date)
+    start_time = time(start_time)
+    end_time = time(end_time)
+
+    reservation = Reservation(user=user, date=date, start_time=start_time, end_time=end_time)
     db.session.add(reservation)
     db.session.commit()
 

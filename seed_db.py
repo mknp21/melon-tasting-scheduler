@@ -6,6 +6,7 @@ import crud
 import model
 import server
 
+from datetime import date, time
 from faker import Faker
 fake = Faker()
 
