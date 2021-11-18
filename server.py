@@ -33,7 +33,13 @@ def process_login():
     else:
         session["current_user"] = user.name
         flash("Login successful!")
-        return redirect("/")
+        return redirect("/browse-reservations")
+
+@app.route("/browse-reservations")
+def show_res():
+    """Show available reservations."""
+
+    return render_template("search.html")
 
 
 if __name__ == "__main__":
