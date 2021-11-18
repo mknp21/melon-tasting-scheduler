@@ -46,7 +46,7 @@ def show_user_res():
     """Show user's reservations."""
 
     user_id = session["current_user"]
-    user = 
+    user = crud.get_user_by_id(user_id)
 
     return render_template("user_reservs.html", user=user)
 
