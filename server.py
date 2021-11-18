@@ -20,6 +20,22 @@ def show_home():
 
     return render_template("home.html")
 
+@app.route("/", methods=["POST"])
+def process_login():
+    """Process user login info."""
+
+    email = request.form.get("email")
+    user = crud.get_user_by_email(email)
+
+    if user == None:
+        flash("No account found.")
+        return redirect("/")
+    else:
+        session["current_user"] = user.name
+        flash("Login successful!")
+        return redirect("/")
+
+
 if __name__ == "__main__":
     # DebugToolbarExtension(app)
     connect_to_db(app)

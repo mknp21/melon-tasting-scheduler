@@ -4,12 +4,13 @@
 {% block body %}
   <h1>Melon Tasting Scheduler</h1>
   <h4>Log In</h4>
-  <form>
+  <form method="POST">
     <label>Enter your email to sign in:</label>
     <input type="email"
            id="login"
            name="email"
            placeholder="Email"
            required>
+    <button type="submit">Log In</button>
   </form>
 {% endblock %}
